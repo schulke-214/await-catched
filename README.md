@@ -7,8 +7,8 @@ Smart async-await error handling.
 ## Installation
 
 ```bash
-$ yarn add catched -S
-$ npm i catched -S
+yarn add catched -S
+npm i catched -S
 ```
 
 ## Examples
@@ -33,13 +33,17 @@ async function login({ username, email, password }) {
     return token;
 }
 
+// example with a callback
 async function login({ username, email, password }, cb) {
     const user = await catched(User.find({ email }), e => cb('No user found'));
 
     const match = await catched(user.comparePassword(password)) || false;
     if(!match) cb('Wrong password');
 
-    const token = await catched(user.generateAuthToken(), e => cb('Failed to save the user'));
+    const token = await catched(
+        user.generateAuthToken(), 
+        e => cb('Failed to save the user')
+    );
 
     return token;
 }
@@ -47,6 +51,7 @@ async function login({ username, email, password }, cb) {
 
 
 ## API
+
 
 ## Purpose
 
@@ -58,12 +63,5 @@ The main difference between [await-to-js]() and **catched** is the way that thes
 
 > The primary design goal is to minimize the amount of code you need to write to handle errors.
 
-------------
-| lol | xd |
-|-----|----|
-|rofl| mehr |
-------------
-
-
-
-### catch
+## License
+MIT © Maximilian Schulke
