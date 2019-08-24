@@ -1,13 +1,39 @@
-export const catched = async (promise, err) => {
-	if (!(promise instanceof Promise)) throw new Error('TypeError: Expected a promise as first argument');
+const isPromiseArray = arr => {
+	const isArr = Array.isArray(arr);
+
+	if (!isArr) return false;
+
+	return arr.every(el => el instanceof Promise);
+};
+
+const defaultOptions = {
+	quiet: false
+};
+
+export const catched = async (target, handler, options = defaultOptions) => {
+	const single = target instanceof Promise;
+	const multiple = isPromiseArray(target);
+
+	if (!single && !multiple)
+		throw new TypeError('Expected a single promise or an array of promises as first argument');
+	if (handler && typeof handler !== 'function')
+		throw new TypeError('Expected a error handler function as second argument');
 
 	try {
-		const res = await promise();
+		let res;
+
+		if (single) {
+			res = await target;
+		} else {
+			res = await Promise.all(target);
+		}
+
 		return res;
 	} catch (e) {
-		if (typeof err === 'function') err(e);
-		else if (typeof err === 'string' || typeof err === 'object') throw err;
-		else throw e;
+		if (handler) handler(e);
+		else if (!options.quiet) {
+			console.warn('catched: found an unhandled exception');
+		}
 
 		return null;
 	}
