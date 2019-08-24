@@ -22,11 +22,7 @@ export const catched = async (target, handler, options = defaultOptions) => {
 	try {
 		let res;
 
-		if (single) {
-			res = await target;
-		} else {
-			res = await Promise.all(target);
-		}
+		res = single ? await target : await Promise.all(target);
 
 		return res;
 	} catch (e) {
