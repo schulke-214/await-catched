@@ -25,6 +25,6 @@
 	},
 	"homepage": "https://github.com/schulke-214/catched#readme",
 	"dependencies": {
-		"@zeit/ncc": "^0.20.4",
+		"@zeit/ncc": "^0.20.4"
 	}
 }
