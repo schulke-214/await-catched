@@ -1,4 +1,9 @@
 # await-catched
+
+[![NPM version][npm-image]][npm-url]
+[![Size][size-badge]][npm-url]
+[![License][license-badge]][github-url]
+
 Smart async-await error handling.
 
 > Minimize the amount of code you need to write to handle errors.
@@ -73,9 +78,12 @@ The main difference between [await-to-js][await-to-js-url] and **await-catched**
 ## License
 MIT © Maximilian Schulke
 
+[github-url]: https://www.github.com/schulke-214/await-catched
 [npm-url]: https://npmjs.org/package/await-catched
 [npm-image]: https://img.shields.io/npm/v/await-catched
 
-[download-badge]: http://img.shields.io/npm/dm/await-to-js.svg
+[size-badge]: https://img.shields.io/bundlephobia/min/await-catched
+[license-badge]: https://img.shields.io/github/license/schulke-214/await-catched
+[download-badge]: https://img.shields.io/npm/dm/await-catched
 
 [await-to-js-url]: https://github.com/scopsy/await-to-js
