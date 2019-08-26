@@ -1,8 +1,8 @@
 # await-catched
 
-[![NPM version][npm-image]][npm-url]
-[![Size][size-badge]][npm-url]
-[![License][license-badge]][github-url]
+[![npm-version][npm-image]][npm-url]
+[![size][size-badge]][npm-url]
+[![license][license-badge]][github-url]
 
 Smart async-await error handling.
 
@@ -19,7 +19,6 @@ npm i await-catched --save
 
 ```javascript
 import { catched } from 'await-catched';
-
 
 // example with throw
 async function login({ username, email, password }) {
