@@ -1,6 +1,6 @@
 {
 	"name": "await-catched",
-    "version": "1.0.3",
+    "version": "1.0.4",
 	"description": "Smart async/await error handling.",
     "main": "dist/index.js",
     "module": "dist/index.js",
