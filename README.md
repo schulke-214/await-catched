@@ -54,10 +54,10 @@ async function login({ username, email, password }, cb) {
 
 `catched([promises], handler)`
 
-| Argument   | Description                                                                                                                          | Type       |
-|:-----------|:-------------------------------------------------------------------------------------------------------------------------------------|:-----------|
-| `promises` | Can be either a single promise or an array of promises. If its an array it will get piped into `Promise.all`.                        | `Promise||[Promise]`  |
-| `handler`  | An optional handler which only gets called if one or more promises reject. It gets called with the error object which caused the promises to reject. | `Function` |
+| Argument   | Description                                                                                                                                          | Type        |
+|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------|:------------|
+| `promises` | Can be either a single promise or an array of promises. If its an array it will get piped into `Promise.all`.                                        | `[Promise]` |
+| `handler`  | An optional handler which only gets called if one or more promises reject. It gets called with the error object which caused the promises to reject. | `Function`  |
 
 ## Purpose
 
