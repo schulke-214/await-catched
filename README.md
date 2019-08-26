@@ -60,7 +60,7 @@ async function login({ username, email, password }, cb) {
 | Argument   | Description                                                                                                                                          | Type        |
 |:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------|:------------|
 | `promises` | Can be either a single promise or an array of promises. If its an array, it will get piped into `Promise.all`.                                        | `[Promise]` |
-| `handler`  | An optional handler which only gets called if one or more promises reject. It gets called with the error object which caused the promises to reject. | `Function`  |
+| `handler`  | An optional handler which only gets called if one or more promises reject. It gets called with the error object that caused the promises to reject. | `Function`  |
 
 The `catched` function returns the results of the promises that you passed to it - for a single promise, this will end up in a single value - otherwise, you can expect to get an array of results back. In case of an error it returns `null`.
 
@@ -70,7 +70,7 @@ The `catched` function returns the results of the promises that you passed to it
 
 ### await-catched vs await-to-js
 
-The main difference between [await-to-js][await-to-js-url] and **await-catched** is the way that these two libraries are designed. While [await-to-js][await-to-js-url] aims to handle errors like you would do in a go-lang programm, **await-catched** focuses on ease of use and modern api design.
+The main difference between [await-to-js][await-to-js-url] and **await-catched** is the way that these two libraries are designed. While [await-to-js][await-to-js-url] aims to handle errors like you would do in a go-lang program, **await-catched** focuses on ease of use and modern api design.
 
 > The primary design goal is to minimize the amount of code you need to write to handle errors.
 
