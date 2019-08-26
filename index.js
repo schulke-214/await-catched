@@ -6,13 +6,9 @@ const isPromiseArray = arr => {
 	return arr.every(el => el instanceof Promise);
 };
 
-const defaultOptions = {
-	quiet: false
-};
-
-export const catched = async (target, handler, options = defaultOptions) => {
-	const single = target instanceof Promise;
-	const multiple = isPromiseArray(target);
+export const catched = async (targets, handler) => {
+	const single = targets instanceof Promise;
+	const multiple = isPromiseArray(targets);
 
 	if (!single && !multiple)
 		throw new TypeError('Expected a single promise or an array of promises as first argument');
@@ -20,17 +16,11 @@ export const catched = async (target, handler, options = defaultOptions) => {
 		throw new TypeError('Expected a error handler function as second argument');
 
 	try {
-		let res;
-
-		res = single ? await target : await Promise.all(target);
+		const res = single ? await targets : await Promise.all(targets);
 
 		return res;
 	} catch (e) {
 		if (handler) handler(e);
-		else if (!options.quiet) {
-			console.warn('catched: found an unhandled exception');
-		}
-
 		return null;
 	}
 };
