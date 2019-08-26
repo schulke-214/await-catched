@@ -1,6 +1,6 @@
 {
 	"name": "await-catched",
-    "version": "1.0.2",
+    "version": "1.0.3",
 	"description": "Smart async/await error handling.",
     "main": "dist/index.js",
     "module": "dist/index.js",
@@ -29,7 +29,7 @@
 		"url": "https://github.com/schulke-214/await-catched/issues"
 	},
 	"homepage": "https://github.com/schulke-214/await-catched#readme",
-	"dependencies": {
+	"devDependencies": {
 		"@zeit/ncc": "^0.20.4"
 	}
 }
