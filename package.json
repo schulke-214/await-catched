@@ -2,13 +2,18 @@
 	"name": "await-catched",
     "version": "1.0.2",
 	"description": "Smart async/await error handling.",
-	"main": "dist/index.js",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "typings": "dist/types/await-to-js.d.ts",
+    "files": [
+      "dist"
+    ],
 	"scripts": {
 		"build": "ncc build index.js -o dist -m"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/schulke-214/catched.git"
+		"url": "git+https://github.com/schulke-214/await-catched.git"
 	},
 	"keywords": [
 		"async-await",
@@ -18,12 +23,12 @@
 		"es7",
 		"node"
 	],
-	"author": "schulke-214 <hello@maximilianschulke.com>",
+	"author": "Maximilian Schulke <hello@maximilianschulke.com>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/schulke-214/catched/issues"
+		"url": "https://github.com/schulke-214/await-catched/issues"
 	},
-	"homepage": "https://github.com/schulke-214/catched#readme",
+	"homepage": "https://github.com/schulke-214/await-catched#readme",
 	"dependencies": {
 		"@zeit/ncc": "^0.20.4"
 	}

@@ -55,20 +55,27 @@ async function login({ username, email, password }, cb) {
 
 | Argument   | Description                                                                                                                                          | Type        |
 |:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------|:------------|
-| `promises` | Can be either a single promise or an array of promises. If its an array it will get piped into `Promise.all`.                                        | `[Promise]` |
+| `promises` | Can be either a single promise or an array of promises. If its an array, it will get piped into `Promise.all`.                                        | `[Promise]` |
 | `handler`  | An optional handler which only gets called if one or more promises reject. It gets called with the error object which caused the promises to reject. | `Function`  |
 
-The `catched` function returns the results of the promises that you passed to it - for a single promise this will end up in a single value - otherwise you can expect to get an array of results back. In case of an error it returns `null`.
+The `catched` function returns the results of the promises that you passed to it - for a single promise, this will end up in a single value - otherwise, you can expect to get an array of results back. In case of an error it returns `null`.
 
 ## Purpose
 
-**await-catched** is designed to be a small and easy to use alternative to the well known [await-to-js](https://github.com/scopsy/await-to-js) error handling library. 
+**await-catched** is designed to be a small and easy to use alternative to the well known [await-to-js][await-to-js-url] error handling library. 
 
 ### await-catched vs await-to-js
 
-The main difference between [await-to-js](https://github.com/scopsy/await-to-js) and **await-catched** is the way that these two libraries are designed. While [await-to-js](https://github.com/scopsy/await-to-js) aims to handle errors like you would do in a go-lang programm, **await-catched** focuses on ease of use and modern api design.
+The main difference between [await-to-js][await-to-js-url] and **await-catched** is the way that these two libraries are designed. While [await-to-js][await-to-js-url] aims to handle errors like you would do in a go-lang programm, **await-catched** focuses on ease of use and modern api design.
 
 > The primary design goal is to minimize the amount of code you need to write to handle errors.
 
 ## License
 MIT © Maximilian Schulke
+
+[npm-url]: https://npmjs.org/package/await-catched
+[npm-image]: https://img.shields.io/npm/v/await-catched
+
+[download-badge]: http://img.shields.io/npm/dm/await-to-js.svg
+
+[await-to-js-url]: https://github.com/scopsy/await-to-js
