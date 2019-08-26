@@ -1,5 +1,5 @@
 {
-	"name": "catched",
+	"name": "await-catched",
 	"version": "1.0.0",
 	"description": "Smart async/await error handling.",
 	"main": "dist/index.js",
