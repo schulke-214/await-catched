@@ -1,15 +1,21 @@
 {
 	"name": "await-catched",
-    "version": "1.0.5",
+	"version": "1.1.0",
 	"description": "Smart async/await error handling.",
-    "main": "dist/index.js",
-    "module": "dist/index.js",
-    "typings": "dist/types/await-to-js.d.ts",
-    "files": [
-      "dist"
-    ],
+	"main": "./dist/await-catched.cjs.js",
+	"browser": "./dist/await-catched.umd.js",
+	"module": "./dist/await-catched.es.js",
+	"jsnext:main": "./dist/await-catched.es.js",
+	"files": [
+		"dist"
+	],
 	"scripts": {
-		"build": "ncc build index.js -o dist -m"
+		"test": "jest",
+		"dev": "rollup -c rollup.config.js -w",
+		"build": "rollup -c rollup.config.js",
+		"build:clean": "yarn clean && yarn build",
+		"clean": "rm -rf ./dist",
+		"size": "bundlesize"
 	},
 	"repository": {
 		"type": "git",
@@ -28,8 +34,23 @@
 	"bugs": {
 		"url": "https://github.com/schulke-214/await-catched/issues"
 	},
+	"bundlesize": [
+		{
+			"path": "./dist/await-catched.*.js",
+			"maxSize": "3 kB"
+		}
+	],
 	"homepage": "https://github.com/schulke-214/await-catched#readme",
 	"devDependencies": {
-		"@zeit/ncc": "^0.20.4"
+		"@babel/core": "^7.7.2",
+		"@babel/preset-env": "^7.7.1",
+		"bundlesize": "^0.18.0",
+		"core-js": "^3.4.1",
+		"rollup": "^1.27.0",
+		"rollup-plugin-babel": "^4.3.3",
+		"rollup-plugin-commonjs": "^10.1.0",
+		"rollup-plugin-node-builtins": "^2.1.2",
+		"rollup-plugin-node-resolve": "^5.2.0",
+		"rollup-plugin-terser": "^5.1.2"
 	}
 }
