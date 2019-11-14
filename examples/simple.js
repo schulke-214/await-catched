@@ -1,4 +1,4 @@
-const { catched } = require('../dist');
+const { catched } = require('../dist/await-catched.cjs');
 
 const { willWork, willFail } = require('./_helper');
 

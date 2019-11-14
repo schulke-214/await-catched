@@ -1,4 +1,4 @@
-const { catched } = require('../dist');
+const { catched } = require('../dist/await-catched.cjs');
 
 const action = async num => {
 	await new Promise((resolve, reject) => {
